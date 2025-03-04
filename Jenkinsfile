@@ -4,7 +4,7 @@ pipeline {
     environment {
         SERVICE_NAME = "rating-service"
         REPO_URL = "https://github.com/iskander1242/rating.git"
-        COMPOSE_FILE = "../ratingRoot/docker-compose.yml" // Путь к docker-compose
+        COMPOSE_FILE = "C:/Users/u108/ideaProjects/ratingRoot/docker-compose.yml" // Путь к docker-compose
     }
 
     stages {
