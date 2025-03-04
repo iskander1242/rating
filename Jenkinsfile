@@ -48,7 +48,7 @@ pipeline {
         }
     }
     triggers {
-        pollSCM('H/5 * * * *') // Проверка каждые 5 минут
+        pollSCM('H/2 * * * *') // Проверка каждые 5 минут
     }
 }
 //run jenkins 2
