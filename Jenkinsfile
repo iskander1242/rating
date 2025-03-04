@@ -51,4 +51,4 @@ pipeline {
         pollSCM('H/5 * * * *') // Проверка каждые 5 минут
     }
 }
-//run jenkins
+//run jenkins 2
