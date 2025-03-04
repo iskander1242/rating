@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8099
   forward-headers-strategy: framework
   error:
     include-message: always
@@ -7,9 +7,12 @@ spring:
   application:
     name: rating
   datasource:
-    url: jdbc:postgresql://localhost:5432/teston199
-    username: admin
-    password: admin
+#    url: jdbc:postgresql://localhost:5432/teston199
+#    username: admin
+#    password: admin
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/ratingDB}
+    username: ${DATABASE_USERNAME:admin}
+    password: ${DATABASE_PASSWORD:admin}
   servlet:
     multipart:
       max-file-size: 50MB
