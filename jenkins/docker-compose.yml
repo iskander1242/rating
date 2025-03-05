@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile # Создайте этот файл рядом с docker-compose.yml
+    container_name: jenkins
+    privileged: true # Для работы с Docker-in-Docker
+    user: root # Необходимо для прав доступа к монтированным томам
+    ports:
+      - "8090:8080" # Jenkins UI
+      - "50000:50000" # Агент Jenkins
+    environment:
+      - JENKINS_ADMIN_ID=root # Логин администратора
+      - JENKINS_ADMIN_PASSWORD=root # Пароль администратора
+    volumes:
+      - ./jenkins_home:/var/jenkins_home # Директория для сохранения конфигурации Jenkins
+      - /var/run/docker.sock:/var/run/docker.sock # Доступ к Docker-демону хоста
+      - //c/Users/u108/ideaProjects/rednavis:/workspace # Монтируем рабочую директорию с docker-compose.yml
+    restart: unless-stopped
