@@ -39,9 +39,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "docker-compose -f ${COMPOSE_FILE} up -d ${SERVICE_NAME}"
+                        sh "docker-compose -f ${COMPOSE_FILE} up -d ${SERVICE_NAME} --remove-orphans"
                     } else {
-                        bat "docker-compose -f ${COMPOSE_FILE} up -d ${SERVICE_NAME}"
+                        bat "docker-compose -f ${COMPOSE_FILE} up -d ${SERVICE_NAME} --remove-orphans"
                     }
                 }
             }
