@@ -9,7 +9,7 @@ services:
     privileged: true # Для работы с Docker-in-Docker
     user: root # Необходимо для прав доступа к монтированным томам
     ports:
-      - "8090:8080" # Jenkins UI
+      - "8011:8080" # Jenkins UI
       - "50000:50000" # Агент Jenkins
     environment:
       - JENKINS_ADMIN_ID=root # Логин администратора
